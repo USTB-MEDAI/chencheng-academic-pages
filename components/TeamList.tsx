@@ -25,7 +25,9 @@ const TeamList = (): JSX.Element => {
             <div className="mb-8">
                 <h3 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-200">Alumni</h3>
                 <div className="space-y-3">
-                    {data.graduates.map((graduate: Graduate, index: number) => {
+                    {[...data.graduates]
+                        .sort((a: Graduate, b: Graduate) => a.graduationYear.localeCompare(b.graduationYear))
+                        .map((graduate: Graduate, index: number) => {
                         // 根据学位类型设置degree标签的颜色
                         const getBadgeColor = (degree: string) => {
                             switch (degree.toLowerCase()) {
@@ -87,7 +89,7 @@ const TeamList = (): JSX.Element => {
             <div>
                 <h3 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-200">Current Students</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    {data.currentStudents
+                    {[...data.currentStudents]
                         .sort((a: CurrentStudent, b: CurrentStudent) => {
                             // 定义学位优先级：博士生 > 硕士生 > 本科生
                             const getDegreeOrder = (degree: string) => {
@@ -108,9 +110,9 @@ const TeamList = (): JSX.Element => {
                             const orderA = getDegreeOrder(a.degree);
                             const orderB = getDegreeOrder(b.degree);
                             
-                            // 如果学位类型相同，按年份排序（较新的年份在前）
+                            // 如果学位类型相同，按年份排序（较早的年份在前）
                             if (orderA === orderB) {
-                                return b.year.localeCompare(a.year);
+                                return a.year.localeCompare(b.year);
                             }
                             
                             return orderA - orderB;

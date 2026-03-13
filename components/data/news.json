@@ -1,23 +1,58 @@
 [
 	{
+		"id": 0,
+		"content": "One paper is accepted by MedIA.",
+		"date": "2026-03",
+		"isNew": true,
+		"links": []
+	},
+	{
+		"id": 0,
+		"content": "One paper is accepted by BSPC.",
+		"date": "2026-03",
+		"isNew": true,
+		"links": []
+	},
+	{
+		"id": 0,
+		"content": "One paper is accepted by BSPC.",
+		"date": "2026-02",
+		"isNew": true,
+		"links": []
+	},
+	{
+		"id": 0,
+		"content": "I win the Stanford-Elsevier World's Top 2% Scientists List",
+		"date": "2025-09",
+		"isNew": true,
+		"links": []
+	},
+	{
 		"id": 1,
 		"content": "Two papers are accepted by ACM MM'25.",
 		"date": "2025-07",
-		"isNew": true,
+		"isNew": false,
 		"links": []
 	},
 	{
 		"id": 2,
 		"content": "One paper is accepted by Chinese Journal of Engineering.",
 		"date": "2025-05",
-		"isNew": true,
+		"isNew": false,
 		"links": []
 	},
 	{
 		"id": 3,
 		"content": "Yunqing Chen wins the Best Paper Award of the Brain-X.",
 		"date": "2025-01",
-		"isNew": true,
+		"isNew": false,
+		"links": []
+	},
+	{
+		"id": 10,
+		"content": "One paper is accepted by BSPC.",
+		"date": "2025-01",
+		"isNew": false,
 		"links": []
 	},
 	{
@@ -59,13 +94,6 @@
 		"id": 9,
 		"content": "One paper is accepted by RSI.",
 		"date": "2024-08",
-		"isNew": false,
-		"links": []
-	},
-	{
-		"id": 10,
-		"content": "One paper is accepted by BSPC.",
-		"date": "2024-01",
 		"isNew": false,
 		"links": []
 	},

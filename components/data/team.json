@@ -121,6 +121,23 @@
             "chineseName": "王周",
             "degree": "Undergraduate",
             "year": "2022"
+        },{
+            "name": "Zeyu Wu",
+            "chineseName": "吴泽宇",
+            "degree": "Postgraduate",
+            "year": "2025"
+        },
+        {
+            "name": "Weining Tian",
+            "chineseName": "田卫宁",
+            "degree": "Postgraduate",
+            "year": "2025"
+        },
+        {
+            "name": "Boya Jiang",
+            "chineseName": "蒋博雅",
+            "degree": "Undergraduate",
+            "year": "2025"
         }
     ]
 }

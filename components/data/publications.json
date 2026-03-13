@@ -415,5 +415,62 @@
 				"url": ""
 			}
 		]
+	},
+
+	{
+		"id": 24,
+		"author": "C Chen, Y Chen, H Ning, H Li, J Liu, R Xiao",
+		"title": "Explicable intensity-aware 3D cerebrovascular segmentation with planar representation",
+		"conference": "MedIA 2026",
+		"year": "2026",
+		"image": "/images/publications/26-Explicable.png",
+		"links": [
+			{
+				"name": "pdf",
+				"url": ""
+			},
+			{
+				"name": "slides",
+				"url": ""
+			}
+		]
+	},
+
+	{
+		"id": 25,
+		"author": "F Ding, C Chen, X Wang, H Ning",
+		"title": "PMDC-Net: Channel-weighted multi-scale dilated feature network for robust retinal vessel segmentation in OCTA",
+		"conference": "BSPC 2026",
+		"year": "2026",
+		"image": "/images/publications/26-PMDC.png",
+		"links": [
+			{
+				"name": "pdf",
+				"url": ""
+			},
+			{
+				"name": "slides",
+				"url": ""
+			}
+		]
+	},
+
+	{
+		"id": 26,
+		"author": "R Xiao, X Li, M Yu, T Lu, Z Zhao, J Wu, C Chen",
+		"title": "Puncture path planning for thermal ablation surgery of hyperparathyroidism based on multi-objective constraints",
+		"conference": "BSPC 2026",
+		"year": "2026",
+		"image": "/images/publications/26-Puncture.png",
+		"links": [
+			{
+				"name": "pdf",
+				"url": ""
+			},
+			{
+				"name": "slides",
+				"url": ""
+			}
+		]
 	}
 ]

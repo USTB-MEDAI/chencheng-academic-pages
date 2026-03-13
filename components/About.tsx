@@ -24,16 +24,10 @@ const About = (): JSX.Element => {
 					</p>
 					
 					<p className="text-base italic mt-4">
-					My current research interests include medical semantic understanding and multi-modal 3D reconstruction. 
-					Recently, I have authored over 20 papers in journals and at international conferences and is now in charge of National Natural Science Foundation of China and China Postdoctoral Science Foundation. 
-					I was awarded the Beijing Young Talent Support Project, Dingxin Postdoctoral Researcher of Beijing University of Science and Technology, and Outstanding Postdoctoral Researcher.
+					My current research interests include medical semantic understanding and multi-modal 3D reconstruction. Recently, I have authored over 20 papers in journals and at international conferences and is now in charge of National Natural Science Foundation of China, Research on Chronic Disease Management, China Postdoctoral Science Foundation, and Open Fund of the Key Laboratory of the Ministry of Education. I was awarded Stanford-Elsevier World's Top 2% Scientists List and Beijing Young Talent Support Project.
 					</p>
 					<p className="text-base mt-4">
-					陈诚，北京科技大学计算机与通信工程学院，副教授，硕士生导师；
-					长期致力于图像语义理解、多模态三维重建等。
-					主持国家自然科学基金、中国博士后科学基金等项目。
-					近3年，研究成果以第一/通讯作者发表SCI论文/CCF A类会议20余篇，独著著作1部。
-					入选北京市青年人才托举工程、北京科技大学鼎新博士后、优秀博士后等。
+					陈诚，北京科技大学计算机与通信工程学院，副教授，硕士生导师；长期致力于图像语义理解、多模态三维重建等。主持国家自然科学基金、慢病管理研究课题、中国博士后科学基金、教育部重点实验室开放基金等项目。近3年，研究成果以第一/通讯作者发表SCI论文/CCF A类会议20余篇，独著著作1部。入选斯坦福-爱思唯尔全球前2%顶尖科学家榜单、北京市青年人才托举工程等。
 					</p>
 					{/* <p className = "text-sm text-gray-600">
 						Research Interest: {personalInfo.about.interest}
