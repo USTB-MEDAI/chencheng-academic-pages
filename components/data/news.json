@@ -1,33 +1,5 @@
 [
 	{
-		"id": 0,
-		"content": "One paper is accepted by MedIA.",
-		"date": "2026-03",
-		"isNew": true,
-		"links": []
-	},
-	{
-		"id": 0,
-		"content": "One paper is accepted by BSPC.",
-		"date": "2026-03",
-		"isNew": true,
-		"links": []
-	},
-	{
-		"id": 0,
-		"content": "One paper is accepted by BSPC.",
-		"date": "2026-02",
-		"isNew": true,
-		"links": []
-	},
-	{
-		"id": 0,
-		"content": "I win the Stanford-Elsevier World's Top 2% Scientists List",
-		"date": "2025-09",
-		"isNew": true,
-		"links": []
-	},
-	{
 		"id": 1,
 		"content": "Two papers are accepted by ACM MM'25.",
 		"date": "2025-07",
@@ -151,6 +123,48 @@
 		"content": "One paper is accepted by PMB.",
 		"date": "2023-01",
 		"isNew": false,
+		"links": []
+	},
+	{
+		"id": 0,
+		"content": "One paper is accepted by MedIA.",
+		"date": "2026-03",
+		"isNew": true,
+		"links": []
+	},
+	{
+		"id": 0,
+		"content": "One paper is accepted by BSPC.",
+		"date": "2026-03",
+		"isNew": true,
+		"links": []
+	},
+	{
+		"id": 0,
+		"content": "One paper is accepted by BSPC.",
+		"date": "2026-02",
+		"isNew": true,
+		"links": []
+	},
+	{
+		"id": 0,
+		"content": "I win the Stanford-Elsevier World's Top 2% Scientists List",
+		"date": "2025-09",
+		"isNew": true,
+		"links": []
+	},
+	{
+		"id": 19,
+		"content": "Can Zhang wins the Special Scholarship.",
+		"date": "2025-11",
+		"isNew": true,
+		"links": []
+	},
+	{
+		"id": 20,
+		"content": "Yize Song wins the National Scholarship.",
+		"date": "2025-11",
+		"isNew": true,
 		"links": []
 	}
 ]
