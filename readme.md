@@ -8,6 +8,8 @@
 
 https://github.com/lydhr/NextJSAcademicTheme
 
+对项目有任何问题可以联系Chandery(https://github.com/Chandery)
+
 ## 如何配环境 & 本地运行
 
 先确保你本机有 Node.js + npm（建议用 nvm 管理 Node 版本）。
