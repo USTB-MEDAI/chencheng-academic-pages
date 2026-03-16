@@ -1,72 +1,115 @@
-# NextJS Academic Theme
+# NextJS Academic Theme（数据驱动的学术主页）
 
-## [Demo🔗](https://nextjs-academic-theme.vercel.app/)
-> A simple academic personal website, built with Tailwind CSS and Next.js, focused on performance, a11y and privacy 🚀
+## 前言
 
+本项目已部署到 vercel 上，对于组内维护人员维护成本极低，只需要按照下面“维护方法”步骤进行即可，不需要额外操作。 对于其他用途的，同样可以按照“维护方法”步骤进行，并自行部署到服务器中。
 
-## Highlights
+特别注意，本项目由以下项目修改而成，这里注明出处：
 
-- Built with:
-    - [Next.js](https://nextjs.org/) (Thereby, hosting on [Vercel](https://vercel.com) is recommended. FREE)
-        - Written in [TypeScript](https://nextjs.org/docs/pages/building-your-application/configuring/typescript) [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/xojs/xo)
-    - [Tailwind CSS](https://tailwindcss.com/)
-- **Easy customization** - edit the data in components/data/*.json without altering the code.
-- **Accessible** - follows [WAI-ARIA](https://developer.mozilla.org/en-US/docs/Learn/Accessibility/WAI-ARIA_basics).
-- **Responsive** - uses latest CSS features and looks great on all devices.
-- Optimized SEO
-- Traffic tracking by Google Analytics
+https://github.com/lydhr/NextJSAcademicTheme
 
-## Development
+## 如何配环境 & 本地运行
 
-##### Install Node and NPM by NVM
-- For MacOS, `brew install NVM` or [install by script](https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating) (any OS)
-- Then `nvm install 20` installs Node.js v20; it comes with npm.
-
-##### Run locally
+先确保你本机有 Node.js + npm（建议用 nvm 管理 Node 版本）。
 
 ```bash
-cd NextJSAcademicTheme/
-# Install dependencies
+# 安装依赖
 npm install
-# Run in development mode
+
+# 本地开发
 npm run dev
-# Build for production
+
+# 生产构建
 npm run build
 
+# 本地启动（生产模式）
+npm run start
 ```
 
-##### Customize your info
-- in components/data/personalInfo.json
-- in components/data/publications.json
-- in components/data/projects.json
-- in components/data/teaching.json
-- in .env
-- in public/cv.pdf
+由于本项目已部署至vercel，组内人员维护仅需要进行`npm install` 和 `npm run dev`操作，后者可以进行预览，任何修改都实时更新至页面。
 
+## 这个项目的一些特征
 
-##### Deploy on Vercel
-- Option 1: deploy on Vercel via [Vercel cli](https://vercel.com/docs/cli)
+- **Next.js（Pages Router）+ React + TypeScript**
+- **Tailwind CSS**：整体样式由 Tailwind 负责
+- **数据驱动**：页面内容主要来自 `components/data/*.json`，多数情况下只改 data 不用改组件代码
+- **暗色模式支持**：项目依赖了 `next-themes`
+- **SEO/sitemap**：构建后会跑 `next-sitemap`（见 `package.json` 的 `postbuild`）
 
-```bash
-npm i -g vercel
-# preview
-vercel
-# production
-vercel --prod
-```
+## 数据怎么改
 
-- Option 2: push to your own Github repo then [connect it to Vercel](https://vercel.com/docs/deployments/git#deploying-a-git-repository) (CI/CD, i.e. every new commit to Github will reflect on Vercel automatically.)
+### (a) 针对 `components/data`
 
+你主要会改这些文件（按板块对应）：
 
-- After successful deployment on Vercel, it should be alive on `yourwebname.vercel.app` online. To use your own **domain name**, config the settings on Vercel [here](https://vercel.com/docs/projects/domains/add-a-domain#verify-domain-access). 
+- **个人信息**：`components/data/personalInfo.json`
+- **News**：`components/data/news.json`
+- **Publications**：`components/data/publications.json`
+- **Projects**：`components/data/projects.json`
+- **Teaching**：`components/data/teaching.json`
+- **Team**：`components/data/team.json`
 
-##### [Optional] Track your web traffic by connecting to [Google Analytics](https://analytics.google.com/analytics/academy/course/6)
-- Simply add your project tracking code, e.g. G-38LNZ3XXXX, in `.env`.
+资源文件一般在 `public/` 下（例如论文/项目图片、`public/images/publications/20-1-Prediction.png` 等）。
 
-## Acknowledgments
+### (b) 对应每个页面：通常只需要改 data
 
-- Inspired by [https://kepinski.ch/](https://github.com/xxczaki/site)
+- **首页**：`pages/index.tsx`
+  - 当前渲染：`About` + `NewsList`
+  - `PublicationList / Teaching / Education` 在代码里被注释掉了；若要展示，取消注释即可
+- **Publications 页**：`pages/publications.tsx` → `components/PublicationList.tsx` → `components/data/publications.json`
+- **Projects 页**：`pages/projects.tsx` → `components/ProjectList.tsx` → `components/data/projects.json`
+- **Team 页**：`pages/team.tsx` → `components/TeamList.tsx` → `components/data/team.json`
 
-### License
+## 板块特征
 
-Code released under [WTFPL](http://www.wtfpl.net/)
+- **About**（`components/About.tsx`）
+  - **数据来源**：`personalInfo.name`、`personalInfo.about.email`
+  - **注意**：简介/中文简介等大段文本目前是写在组件里的（不是 data 驱动）
+
+- **News**（`components/NewsList.tsx` → `components/data/news.json`）
+  - **字段**：`id`, `content`, `date`（形如 `YYYY-MM`）, `isNew`, `links`
+  - **排序**：按 `date` **从新到旧**（字符串比较 `localeCompare`）
+
+- **Publications**（`components/PublicationList.tsx` → `components/data/publications.json`）
+  - **字段**：`id`, `author`, `title`, `conference`, `year`（字符串）, `image`, `links`
+  - **排序**：先按 `year` **降序**；同一年再按 `id` **降序**
+
+- **Projects**（`components/ProjectList.tsx` → `components/data/projects.json`）
+  - **字段**：由 `ProjectItem` 使用：`img`, `title`, `description`
+  - **排序**：**不排序**，按 JSON 数组原始顺序渲染
+  - <u>目前没有使用</u>
+
+- **Teaching**（`components/Teaching.tsx` → `components/data/teaching.json`）
+  - **字段**：`id`, `name`
+  - **排序**：**不排序**，按 JSON 数组原始顺序渲染
+  - <u>目前没有使用</u>
+
+- **Education**（`components/Education.tsx` → `components/data/personalInfo.json` 的 `education` 数组）
+  - **字段**：`name`, `link`
+  - **排序**：**不排序**，按 `education` 数组顺序展示
+  - <u>目前没有使用</u>
+
+- **Team**（`components/TeamList.tsx` → `components/data/team.json`）
+  - **Alumni / graduates**
+    - **字段**：`name`, `chineseName?`, `degree`, `graduationYear`, `destination`, `destinationEn?`
+    - **排序**：按 `graduationYear` **升序**（字符串比较）
+  - **Current Students / currentStudents**
+    - **字段**：`name`, `chineseName?`, `degree`, `year`
+    - **排序**：
+      - 先按学位类型优先级：**PhD/Doctoral > Master/Postgraduate > Undergraduate > 其他**
+      - 同一学位类型内，再按 `year` **升序**
+
+## 维护方法
+
+1. 把该项目克隆到本地
+2. 根据“如何配环境&本地运行”配置好项目环境并运行
+3. 大部分修改需求仅需修改 data/xxx.json 即可解决，具体可以看上面“板块特征”
+4. 大部分常维护字段已经做了排序处理，这些字段只需要在 json 后面添加新的素材即可，不需要考虑顺序
+5. Team 字段预存了PhD 的字段，具体模板详见“conponents/data/team.json”中“_comments”部分
+6. 附件、图片等素材存放位置为“publics/”，例如最常见的“publics/images/”
+7. 维护完成后做好 commit 描述，并推至本仓库，vercel 会自动完成识别并更新网站，不需要额外操作
+
+## 预见性待维护信息
+
+1. 目前 News 没有限数量上限的逻辑，后续有需要可以加入
+2. 目前 Projects、Teaching、Education 字段并没有加入页面，后续有需要需要加入页面逻辑 (例如 Projects)
