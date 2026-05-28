@@ -117,11 +117,6 @@
             "year": "2022"
         },
         {
-            "name": "Zhou Wang",
-            "chineseName": "王周",
-            "degree": "Undergraduate",
-            "year": "2022"
-        },{
             "name": "Zeyu Wu",
             "chineseName": "吴泽宇",
             "degree": "Postgraduate",
@@ -138,6 +133,12 @@
             "chineseName": "蒋博雅",
             "degree": "Undergraduate",
             "year": "2022"
+        },
+        {
+            "name": "Kang Wang",
+            "chineseName": "王康",
+            "degree": "PhD",
+            "year": "2024"
         }
     ]
 }

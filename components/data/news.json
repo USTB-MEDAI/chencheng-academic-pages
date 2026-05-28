@@ -166,5 +166,12 @@
 		"date": "2025-11",
 		"isNew": true,
 		"links": []
+	},
+	{
+		"id": 21,
+		"content": "One paper is accepted by BSPC.",
+		"date": "2026-05",
+		"isNew": true,
+		"links": []
 	}
 ]
